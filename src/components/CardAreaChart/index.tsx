@@ -1,6 +1,7 @@
-import * as React from 'react';
+import { FC } from 'react';
 import { Card } from 'antd';
 import { TinyArea } from '@ant-design/charts';
+
 import mock from './mock';
 import styles from './index.module.css';
 
@@ -28,17 +29,18 @@ interface CardAreaChartProps {
   cardConfig?: CardConfig;
 }
 
-const CardAreaChart: React.FunctionComponent<CardAreaChartProps> = (props): JSX.Element => {
-  const {
-    cardConfig = DEFAULT_DATA,
-  } = props;
+const Comp: FC<CardAreaChartProps> = (props): JSX.Element => {
+  const { cardConfig = DEFAULT_DATA } = props;
   const { title, subTitle, value, chartData, des, rate, chartHeight } = cardConfig;
 
   return (
     <Card title={title} className={styles.areaChart}>
       <div className={styles.cardSubTitle}>{subTitle}</div>
       <div className={styles.cardValue}>{value}</div>
-      <div className={styles.cardDes}>{des}<span>{rate}↑</span></div>
+      <div className={styles.cardDes}>
+        {des}
+        <span>{rate}↑</span>
+      </div>
       <TinyArea
         data={chartData!}
         width={10}
@@ -58,4 +60,4 @@ const CardAreaChart: React.FunctionComponent<CardAreaChartProps> = (props): JSX.
   );
 };
 
-export default CardAreaChart;
+export default Comp;

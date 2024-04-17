@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { definePageConfig, history, useAuth } from 'ice';
 import { message, Alert } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { ProFormCheckbox, ProFormText, LoginForm } from '@ant-design/pro-form';
-import styles from './index.module.css';
+import { ProFormCheckbox, ProFormText, LoginForm } from '@ant-design/pro-components';
+
 import type { LoginParams, LoginResult } from '@/interfaces/user';
 import { login, fetchUserInfo } from '@/services/user';
 import store from '@/store';
 import logo from '@/assets/logo.png';
+
+import styles from './index.module.css';
 
 const LoginMessage: React.FC<{
   content: string;
@@ -66,11 +68,7 @@ const Login: React.FC = () => {
           await handleSubmit(values as LoginParams);
         }}
       >
-        {loginResult.success === false && (
-          <LoginMessage
-            content="账户或密码错误(admin/ice)"
-          />
-        )}
+        {loginResult.success === false && <LoginMessage content="账户或密码错误(admin/ice)" />}
         <ProFormText
           name="username"
           fieldProps={{

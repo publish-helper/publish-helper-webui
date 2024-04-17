@@ -1,6 +1,8 @@
-import { PageContainer } from '@ant-design/pro-layout';
+import { definePageConfig } from 'ice';
 import { Card, message } from 'antd';
-import ProForm, {
+import {
+  ProForm,
+  PageContainer,
   ProFormDateRangePicker,
   ProFormDependency,
   ProFormDigit,
@@ -8,9 +10,9 @@ import ProForm, {
   ProFormSelect,
   ProFormText,
   ProFormTextArea,
-} from '@ant-design/pro-form';
+} from '@ant-design/pro-components';
+
 import { submitForm } from '@/services/form';
-import { definePageConfig } from 'ice';
 
 export default function Form() {
   const onFinish = async (values: Record<string, any>) => {
@@ -22,14 +24,13 @@ export default function Form() {
   return (
     <PageContainer content="表单页用于向用户收集或验证信息，基础表单常见于数据项较少的表单场景。">
       <Card bordered={false}>
-        <ProForm
+        <ProForm<any>
           hideRequiredMark
           style={{ margin: 'auto', marginTop: 8, maxWidth: 600 }}
           name="basic"
           layout="vertical"
           initialValues={{ public: '1' }}
-          onFinish={onFinish}
-        >
+          onFinish={onFinish}>
           <ProFormText
             width="md"
             label="标题"

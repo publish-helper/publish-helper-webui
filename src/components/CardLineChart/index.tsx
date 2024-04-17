@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Card } from 'antd';
 import { TinyLine } from '@ant-design/charts';
+
 import mock from './mock';
 import styles from './index.module.css';
 

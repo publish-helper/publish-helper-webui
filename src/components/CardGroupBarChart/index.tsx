@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Card } from 'antd';
 import { Column } from '@ant-design/charts';
+
 import styles from './index.module.css';
 
 interface CardConfig {

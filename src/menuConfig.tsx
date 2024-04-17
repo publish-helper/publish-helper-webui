@@ -1,5 +1,5 @@
 import { TableOutlined, WarningOutlined, FormOutlined, DashboardOutlined } from '@ant-design/icons';
-import type { MenuDataItem } from '@ant-design/pro-layout';
+import type { MenuDataItem } from '@ant-design/pro-components';
 
 const asideMenuConfig: MenuDataItem[] = [
   {

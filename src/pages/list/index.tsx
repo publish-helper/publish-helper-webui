@@ -1,10 +1,10 @@
 import { definePageConfig } from 'ice';
-import { PlusOutlined } from '@ant-design/icons';
-import { Button } from 'antd';
 import React, { useRef } from 'react';
-import { PageContainer } from '@ant-design/pro-layout';
-import type { ProColumns, ActionType } from '@ant-design/pro-table';
-import ProTable from '@ant-design/pro-table';
+import { Button } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
+import { ProTable, PageContainer } from '@ant-design/pro-components';
+import type { ProColumns, ActionType } from '@ant-design/pro-components';
+
 import { getRepos } from '@/services/list';
 
 interface GithubRepoItem {
@@ -46,8 +46,7 @@ const columns: Array<ProColumns<GithubRepoItem>> = [
         key="editable"
         onClick={() => {
           action?.startEditable?.(record.id);
-        }}
-      >
+        }}>
         编辑
       </a>,
       <a href={record.url} target="_blank" rel="noopener noreferrer" key="view">

@@ -1,12 +1,13 @@
 import React, { useCallback } from 'react';
 import { history } from 'ice';
-import { LogoutOutlined } from '@ant-design/icons';
 import { Dropdown, Avatar } from 'antd';
+import { LogoutOutlined } from '@ant-design/icons';
 import type { MenuInfo } from 'rc-menu/lib/interface';
-import styles from './index.module.css';
+
 import { logout } from '@/services/user';
 import store from '@/store';
 
+import styles from './index.module.css';
 interface AvatarDropdownProps {
   name: string;
   avatar: string;
